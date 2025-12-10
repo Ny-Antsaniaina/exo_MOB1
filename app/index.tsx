@@ -1,14 +1,21 @@
-import {createStackNavigator} from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
+import Help from "./help/help";
 import Menu from "./menu/menu";
-import Game from './play/game';
-export  function App() {
-  const Stack =  createStackNavigator()
+import Options from "./options/options";
+import Game from "./play/game";
+
+export default function App() {
+  const Stack = createStackNavigator();
+
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Menu" component={Menu}/>
-        <Stack.Screen name="Game" component={Game}/>
+      <Stack.Navigator initialRouteName="Menu">
+        <Stack.Screen name="Menu" component={Menu} />
+        <Stack.Screen name="Game" component={Game} />
+        <Stack.Screen name="Options" component={Options} />
+        <Stack.Screen name="Help" component={Help} />
       </Stack.Navigator>
     </NavigationContainer>
   );

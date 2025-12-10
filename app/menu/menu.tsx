@@ -1,28 +1,56 @@
-import { View , Image , Text, Pressable} from "react-native"
+import { Image, Pressable, Text, View } from "react-native";
+import { styles } from "./menuStyles";
 
-export const Menu = () => {
-    return (
-        <View>
-            <View>
-                <Image source={require('../../assets/images/bomb.png')}/>
-                <Text>GTA 6 </Text>
-            </View>
-            <View>
-                <Pressable>
-                    <Text>New Game</Text>
-                </Pressable>
-                <Pressable>
-                    <Text>Load Game</Text>
-                </Pressable>
-                <Pressable>
-                    <Text>Settings</Text>
-                </Pressable>
-                <Pressable>
-                    <Text>Exit</Text>
-                </Pressable>
-            </View>
-        </View>
-    )
-}
+type Props = {
+  navigation: any;
+};
 
-export default Menu
+export const Menu = ({ navigation }: Props) => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Image
+          source={require("../../assets/images/bomb.png")}
+          style={styles.logo}
+        />
+        <Text style={styles.title}>DÉMINEUR</Text>
+      </View>
+
+      <View style={styles.buttonContainer}>
+        
+        <Pressable
+          style={styles.button}
+          onPress={() => navigation.navigate("Game")}
+        >
+          <Text style={styles.buttonText}>Nouveau Jeu</Text>
+        </Pressable>
+
+        
+        <Pressable
+          style={styles.button}
+          onPress={() => navigation.navigate("Game")}
+        >
+          <Text style={styles.buttonText}>Continuer le Jeu</Text>
+        </Pressable>
+
+        
+        <Pressable
+          style={styles.button}
+          onPress={() => navigation.navigate("Options")}
+        >
+          <Text style={styles.buttonText}>Options</Text>
+        </Pressable>
+
+        
+        <Pressable
+          style={styles.button}
+          onPress={() => navigation.navigate("Help")}
+        >
+          <Text style={styles.buttonText}>Aide</Text>
+        </Pressable>
+      </View>
+    </View>
+  );
+};
+
+export default Menu;
