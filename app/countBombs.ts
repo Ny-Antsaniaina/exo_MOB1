@@ -6,12 +6,13 @@ export default function countBombs(board: any[][], x: number, y: number) {
   ];
 
   let count = 0;
+  const size = board.length;
 
   for (const [dx, dy] of directions) {
     const nx = x + dx;
     const ny = y + dy;
 
-    if (nx >= 0 && nx < 20 && ny >= 0 && ny < 20) {
+    if (nx >= 0 && nx < size && ny >= 0 && ny < size) {
       if (board[nx][ny].isBomb) count++;
     }
   }

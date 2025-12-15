@@ -43,7 +43,7 @@ const Box: FC<Props> = ({ x, y, cell, onPress }) => {
     >
       {cell.revealed && cell.isBomb && (
         <Image
-          source={require("../../assets/images/bomb.png")}
+          source={require("../assets/images/bomb.png")}
           style={{ width: 18, height: 18 }}
         />
       )}

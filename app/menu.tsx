@@ -10,7 +10,7 @@ export const Menu = ({ navigation }: Props) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={require("../../assets/images/bomb.png")}
+          source={require("../assets/images/bomb.png")}
           style={styles.logo}
         />
         <Text style={styles.title}>DÉMINEUR</Text>
@@ -20,7 +20,7 @@ export const Menu = ({ navigation }: Props) => {
         
         <Pressable
           style={styles.button}
-          onPress={() => navigation.navigate("Game")}
+          onPress={() => navigation.navigate("/game")}
         >
           <Text style={styles.buttonText}>Nouveau Jeu</Text>
         </Pressable>
@@ -28,7 +28,7 @@ export const Menu = ({ navigation }: Props) => {
         
         <Pressable
           style={styles.button}
-          onPress={() => navigation.navigate("Game")}
+          onPress={() => navigation.navigate("/game")}
         >
           <Text style={styles.buttonText}>Continuer le Jeu</Text>
         </Pressable>
@@ -36,7 +36,7 @@ export const Menu = ({ navigation }: Props) => {
         
         <Pressable
           style={styles.button}
-          onPress={() => navigation.navigate("Options")}
+          onPress={() => navigation.navigate("/options")}
         >
           <Text style={styles.buttonText}>Options</Text>
         </Pressable>
@@ -44,7 +44,7 @@ export const Menu = ({ navigation }: Props) => {
         
         <Pressable
           style={styles.button}
-          onPress={() => navigation.navigate("Help")}
+          onPress={() => navigation.navigate("/help")}
         >
           <Text style={styles.buttonText}>Aide</Text>
         </Pressable>
